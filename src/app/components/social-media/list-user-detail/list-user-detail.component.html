@@ -1,0 +1,70 @@
+<app-header></app-header>
+<div class="col">
+    <button type="button" (click)="goBack()" style="background-color: #D55845;color: white;"
+        class="btn float-left mt-1 mb-2" data-toggle="button" aria-pressed="false" autocomplete="on">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back
+    </button>
+    <div class="container mt-3">
+        <div class="row" style="background-color: white;">
+            <div class="col-4">
+                <div class="mt-2" style="height: 100px;background-color: #D55845;"></div>
+                <div style="text-align-last: center;background-color: white;" class="mt-2">
+                    <img class="mat-card-image" style="border-radius: 100px;background-color: teal;margin-top: -75px;"
+                        src="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="Avatar">
+                    <h1>{{selectedUser?.name}}</h1>
+                </div>
+                <hr>
+                <div>
+                    <div class="text-align-last">
+                        <i class="far fa-user icon-size"> </i>
+                        <h2>{{selectedUser?.username}}</h2>
+                    </div>
+                    <div class="text-align-last">
+                        <i class="far fa-envelope icon-size"> </i>
+                        <h2>{{selectedUser?.email}}</h2>
+                    </div>
+                    <hr>
+                </div>
+                <div>
+                    <div class="text-align-last">
+                        <i class="fas fa-mobile-alt icon-size"> </i>
+                        <h2>{{selectedUser?.phone}}</h2>
+                    </div>
+                    <div class="text-align-last">
+                        <i class="far fa-window-restore icon-size"> </i>
+                        <h2>{{selectedUser?.website}}</h2>
+                    </div>
+                    <hr>
+                </div>
+                <div>
+                    <div class="text-align-last">
+                        <i class="fas fa-map-marker-alt icon-size"> </i>
+                        <h2>{{selectedUser?.address?.street}},<br>
+                            {{selectedUser?.address?.suite}},<br>
+                            {{selectedUser?.address?.city}},<br>
+                            {{selectedUser?.address?.zipcode}}.
+                        </h2>
+                    </div>
+                    <hr>
+                </div>
+
+            </div>
+            <div class="col-8">
+                <mat-card *ngFor="let item of listOfUserPost" class="m-2">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>{{item?.title}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p class="mt-1">{{item?.body}}</p>
+                    </mat-card-content>
+                    <div style="text-align-last: right;">
+                        <i class="fas fa-thumbs-up m-2 cursor  icon-size"></i>
+                        <i class="fas fa-heart m-2 cursor  icon-size"></i>
+                        <i class="far fa-comment m-2 cursor  icon-size"></i>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

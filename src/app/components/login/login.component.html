@@ -1,0 +1,23 @@
+<div class="container-fluid d-flex h-100 background">
+    <div class="row">
+        <div>
+            <h1>Login</h1>
+            <form [formGroup]="loginFormGroup" (ngSubmit)="signIn()">
+                <div class="mb-3">
+                    <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="username"
+                        placeholder="Username">
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" id="exampleFormControlInput1" formControlName="password"
+                        placeholder="Password">
+                </div>
+                <div class="align-center">
+                    <button type="submit" *ngIf="!isButtonLoading" class="btn btn-info btn-block btn-large">Sign
+                        In</button>
+                    <mat-spinner [diameter]="40" mode="indeterminate" color="warn" *ngIf="isButtonLoading">
+                    </mat-spinner>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
